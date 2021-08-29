@@ -1,5 +1,3 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { executeSendCommand } from './send';
 
@@ -8,8 +6,6 @@ const port = 6666;
 
 let isKeyBindingsActive = false;
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export const activate = (context: vscode.ExtensionContext) => {
 	console.log("Send To Crow - activate");
 
