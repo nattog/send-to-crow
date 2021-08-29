@@ -4,7 +4,7 @@ import { executeSendCommand } from './send';
 const host = 'localhost';
 const port = 6666;
 
-let isKeyBindingsActive = false;
+export let isKeyBindingsActive = false;
 
 export const activate = (context: vscode.ExtensionContext) => {
 	console.log("Send To Crow - activate");
@@ -31,7 +31,7 @@ const registerCommand = (
     context.subscriptions.push(disposable);
 };
 
-const createToggleActiveKeybindingsCommand = () => {
+export const createToggleActiveKeybindingsCommand = () => {
 	return () => {
 		isKeyBindingsActive = !isKeyBindingsActive; 
 		vscode.window.showInformationMessage(`Send To Crow - Keybindings ${isKeyBindingsActive ? "active" : "inactive"}`);
