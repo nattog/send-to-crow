@@ -11,14 +11,27 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onCommand:sendToCrow.toggleActiveKeybindings",
 		"onCommand:sendToCrow.sendSelection"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
+				"command": "sendToCrow.toggleActiveKeybindings",
+				"title": "Send To Crow: Toggle keybindings"
+			},
+			{
 				"command": "sendToCrow.sendSelection",
-				"title": "Send selected text to crow"
+				"title": "Send To Crow: Send selected text to crow"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "sendToCrow.sendSelection",
+				"key": "ctrl+enter",
+				"mac": "cmd+enter",
+				"when": "editorLangId == lua && sendToCrow:isActive"
 			}
 		]
 	},

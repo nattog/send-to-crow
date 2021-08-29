@@ -6,10 +6,18 @@ import { executeSendCommand } from './send';
 const host = 'localhost';
 const port = 6666;
 
+let isKeyBindingsActive = false;
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export const activate = (context: vscode.ExtensionContext) => {
 	console.log("Send To Crow - activate");
+
+	registerCommand(
+		context,
+		`sendToCrow.toggleActiveKeybindings`,
+		createToggleActiveKeybindingsCommand()
+	);
 
 	registerCommand(
 		context,
@@ -25,6 +33,18 @@ const registerCommand = (
 ) => {
     let disposable = vscode.commands.registerCommand(name, command);
     context.subscriptions.push(disposable);
+};
+
+const createToggleActiveKeybindingsCommand = () => {
+	return () => {
+		isKeyBindingsActive = !isKeyBindingsActive; 
+		vscode.window.showInformationMessage(`Send To Crow - Keybindings ${isKeyBindingsActive ? "active" : "inactive"}`);
+		vscode.commands.executeCommand(
+			"setContext",
+			`sendToCrow:isActive`,
+			isKeyBindingsActive
+		);
+	};
 };
 
 const createSendSelectionCommand = () => {

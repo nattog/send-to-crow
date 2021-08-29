@@ -9,4 +9,6 @@ Druid needs to be installed. Once installed, ensure that it is running by openin
 ## Sending text 
 
 Druid needs to be running before sending any text, as the web socket needs to be open. 
-Then you can select some text and then run `Send selected text to Crow` from your command palette.
+Then you can select some text and then run `Send selected text to Crow` from the command palette.
+
+For faster use, you can run `Toggle keybindings` from the command palette. When this is toggled to active, you can use CTRL+ENTER / CMD+ENTER to send your selection.
