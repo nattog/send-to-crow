@@ -9,7 +9,7 @@
 		"vscode": "^1.59.0"
 	},
 	"repository": {
-		"url": "https://github.com/midouest/norns-repl"
+		"url": "https://github.com/nattog/send-to-crow"
 	},
 	"categories": [
 		"Other"
