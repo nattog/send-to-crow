@@ -58,12 +58,14 @@ const createSendSelectionCommand = () => {
             const line = document.lineAt(selection.active.line);
             range = line.range;
         }
-        const command = document.getText(range);
+        
+        const terminator = "\n";
+        const command = document.getText(range) + terminator;
 
         executeSendCommand({
             host,
             port,
-            command,
+            command
         });
     };
 };

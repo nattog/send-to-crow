@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.0.2 
+
+- Add line terminator to command sends
+
 ## v1.0.1
 
 - Version bump
