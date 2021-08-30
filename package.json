@@ -4,7 +4,7 @@
 	"displayName": "Send To Crow",
 	"description": "Send lines of text to Monome Crow",
 	"icon": "images/sendtocrow.png",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.59.0"
@@ -24,18 +24,23 @@
 		"Web sockets"
 	],
 	"activationEvents": [
-		"onCommand:sendToCrow.toggleActiveKeybindings",
+		"onCommand:sendToCrow.launch",
+		"onCommand:sendToCrow.toggleKeybinding",
 		"onCommand:sendToCrow.sendSelection"
 	],
 	"contributes": {
 		"commands": [
 			{
-				"command": "sendToCrow.toggleActiveKeybindings",
-				"title": "Send To Crow: Toggle keybindings"
+				"command": "sendToCrow.launch",
+				"title": "Send To Crow: Launch Druid"
+			},
+			{
+				"command": "sendToCrow.toggleKeybinding",
+				"title": "Send To Crow: Toggle keybinding"
 			},
 			{
 				"command": "sendToCrow.sendSelection",
-				"title": "Send To Crow: Send selected text to crow"
+				"title": "Send To Crow: Send selected text to Crow"
 			}
 		],
 		"keybindings": [

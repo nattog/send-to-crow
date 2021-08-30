@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.0.3  
+
+- Add command to launch druid
+
 ## v1.0.2 
 
 - Add line terminator to command sends

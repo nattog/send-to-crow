@@ -4,15 +4,15 @@ import { executeSendCommand } from './send';
 const host = 'localhost';
 const port = 6666;
 
-export let isKeyBindingsActive = false;
+export let isKeyBindingActive = false;
 
 export const activate = (context: vscode.ExtensionContext) => {
-	console.log("Send To Crow - activate");
+    registerCommand(context, "sendToCrow.launch", createDruidLaunchCommand());
 
 	registerCommand(
 		context,
-		`sendToCrow.toggleActiveKeybindings`,
-		createToggleActiveKeybindingsCommand()
+		`sendToCrow.toggleKeybinding`,
+		createToggleKeybindingCommand()
 	);
 
 	registerCommand(
@@ -31,16 +31,28 @@ const registerCommand = (
     context.subscriptions.push(disposable);
 };
 
-export const createToggleActiveKeybindingsCommand = () => {
+export const createToggleKeybindingCommand = () => {
 	return () => {
-		isKeyBindingsActive = !isKeyBindingsActive; 
-		vscode.window.showInformationMessage(`Send To Crow - Keybindings ${isKeyBindingsActive ? "active" : "inactive"}`);
+		isKeyBindingActive = !isKeyBindingActive; 
+		vscode.window.showInformationMessage(`Send To Crow - Keybinding ${isKeyBindingActive ? "active" : "inactive"}`);
 		vscode.commands.executeCommand(
 			"setContext",
 			`sendToCrow:isActive`,
-			isKeyBindingsActive
+			isKeyBindingActive
 		);
 	};
+};
+
+export const createDruidLaunchCommand = () => {
+    return () => {
+        vscode.window.showInformationMessage(`Send To Crow - Launching Druid`);
+        const term = vscode.window.createTerminal({name: "druid"});
+        term.sendText("druid", true);
+        vscode.commands.executeCommand("workbench.action.terminal.", {
+            "text": ""
+        });
+        term.show();
+    };
 };
 
 const createSendSelectionCommand = () => {

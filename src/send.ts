@@ -5,7 +5,6 @@ export interface SendCommandOptions extends ConnectWebSocketOptions {
 }
 
 export async function executeSendCommand(options: SendCommandOptions) {
-    console.log('Send To Crow - send');
     const webSocket = await connectWebSocket(options);
     webSocket.send(options.command);
     webSocket.close();

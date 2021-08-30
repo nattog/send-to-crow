@@ -9,11 +9,11 @@ suite('Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
 
 	test('Key bindings toggles correctly', () => {
-		const command = extension.createToggleActiveKeybindingsCommand();
-		assert.strictEqual(false, extension.isKeyBindingsActive);
+		const command = extension.createToggleKeybindingCommand();
+		assert.strictEqual(false, extension.isKeyBindingActive);
 		command();
-		assert.strictEqual(true, extension.isKeyBindingsActive);
+		assert.strictEqual(true, extension.isKeyBindingActive);
 		command();
-		assert.strictEqual(false, extension.isKeyBindingsActive);
+		assert.strictEqual(false, extension.isKeyBindingActive);
 	});
 });
