@@ -3,7 +3,7 @@
 	"publisher": "nattog",
 	"displayName": "Send To Crow",
 	"description": "Send lines of text to Monome Crow",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.59.0"
