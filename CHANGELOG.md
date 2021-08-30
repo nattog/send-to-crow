@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.0.4
+
+- Version bump
+
 ## v1.0.3  
 
 - Add command to launch druid

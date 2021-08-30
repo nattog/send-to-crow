@@ -4,7 +4,7 @@
 	"displayName": "Send To Crow",
 	"description": "Send lines of text to Monome Crow",
 	"icon": "images/sendtocrow.png",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.59.0"

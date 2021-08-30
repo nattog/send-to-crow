@@ -47,10 +47,7 @@ export const createDruidLaunchCommand = () => {
     return () => {
         vscode.window.showInformationMessage(`Send To Crow - Launching Druid`);
         const term = vscode.window.createTerminal({name: "druid"});
-        term.sendText("druid", true);
-        vscode.commands.executeCommand("workbench.action.terminal.", {
-            "text": ""
-        });
+        term.sendText("druid\u000D", true);
         term.show();
     };
 };
